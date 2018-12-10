@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="full-height">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Senate Loyalty</title>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="css/mdb.min.css" rel="stylesheet">
+        <!-- Your custom styles (optional) -->
+        <link rel="stylesheet" type="text/css" href="tgif.css">
+    </head>
+
+    <body>
+        <!--Main Navigation-->
+        <header>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+                <a class="navbar-brand orange-text" href="home.html">TGIF</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link " href="home.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Congress 113</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="house-data.html">House</a>
+                            <a class="dropdown-item" href="senate-data.html">Senate</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Attendance</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item " href="house-attendance.html">House</a>
+                            <a class="dropdown-item" href="senate-attendance.html">Senate</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Party Loyalty</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item " href="house-loyalty.html">House</a>
+                            <a class="dropdown-item active" href="senate-loyalty.html">Senate</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="view intro-2" style="">
+            <div class="full-bg-img">
+                <div class="mask rgba-purple-slight flex-center">
+                    <div class="text-white animated text-center rgba-stylish-strong py-5 px-4 wow fadeInUp">
+                        <div class="py-5">
+                            <!-- <h5 class="h5 orange-text"><i class="fa fa-camera-retro"></i> Photography</h5> -->
+                            <h1 class="card-title h1 my-4 py-2">Transparent Government in Fact</h1>
+                            <h5 class="mb-4 pb-2 px-md-5 mx-md-5">TGIF is a non-partisan non-profit group 
+                                that aims to increase the public’s involvement in government. </h5>
+                            <a class="btn peach-gradient" href="#container"><i class="fa fa-clone left"></i> Congressmen</a>            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>   
+    
+    <!--Main Layout-->
+    <main class="text-left py-5" id="container">
+        <div class="container" >
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Party Loyalty</h2>
+                    <p>Those who consider themselves to be strong partisans, 
+                        strong Democrats and strong Republicans respectively, 
+                        tend to be the most faithful in voting for their party's nominee 
+                        for office and legislation that backs their party's agenda. </p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Senate at a glance</h5>
+                    <table class=" table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Party</th>
+                                <th scope="col">Number of Reps</th>
+                                <th scope="col">% Voted with Prty</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody1">  
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>  
+            <hr width="100%">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Least Loyal (Bottom 10% of Party)</h5>
+                    <table class=" table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Number of Party Votes</th>
+                                <th scope="col">% Party Votes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody4">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <h5>Most Loyal (Top 10% of Party)</h5>
+                    <table class=" table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Number of Party Votes</th>
+                                <th scope="col">% Party Votes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody5">
+                            
+                        </tbody>
+                    </table>
+                </div>     
+    </main>        
+    <!-- Footer -->
+  <footer class="page-footer font-small pt-4 ">
+        <ul class="list-unstyled list-inline text-center">
+            <li class="list-inline-item">
+                <a class="btn-floating btn-fb mx-1">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-tw mx-1">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-gplus mx-1">
+                    <i class="fab fa-google-plus-square"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-li mx-1">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+        </ul>
+  
+        <div class="footer-copyright text-center py-3">
+            © 2018 Copyright TGIF | All Rights Reserved
+        </div>
+      </footer>
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <!-- <script src="pro-congress-113-senate.js"></script> -->
+  <script src="general-statistics.js"></script>
+  <script src="senate-statistics.js"></script>
+
+</body>
+
+</html>

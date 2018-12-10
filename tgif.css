@@ -1,0 +1,54 @@
+body {
+    font-family: 'Lora', serif;
+}
+.view {
+    background: url("https://mdbootstrap.com/img/Photos/Others/img (40).jpg")no-repeat center center;
+    background-size: cover;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.top-nav-collapse {
+    background-color: rgba(61, 151, 198, 0.85);
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #3d97c6;
+    }
+}
+
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+.btn-link a:link{
+    color: blue;
+}
+
+.general-label, .form-check-label {
+    font-weight: bold;
+}
+.custom-select {
+    width: 5px;
+}
+h1 {
+    font-size: 60px;
+}
+.page-footer {
+    background-color: #3b92c2;
+}
+.navbar {
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.navbar-brand {
+    font-weight: bold;
+}
+.input-group-text {
+    background-color: rgba(59, 146, 194, 0.1)
+}
