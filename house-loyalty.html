@@ -77,8 +77,8 @@
     </header>   
     
     <!--Main Layout-->
-    <main class="text-left py-5" id="container">
-        <div class="container" >
+    <main class="text-left py-5" >
+        <div class="container" id="app" data-uri="113/house/members.json">
             <div class="row">
                 <div class="col-md-6">
                     <h2>Party Loyalty</h2>
@@ -97,9 +97,13 @@
                                 <th scope="col">% Voted with Prty</th>
                             </tr>
                         </thead>
-                        <tbody id="tbody1">  
-                            
-                        </tbody>
+                        <tbody>
+                                <tr v-for="member in senateAtGlance">
+                                    <td>{{member.party}}</td>
+                                    <td>{{member.count}}</td>
+                                    <td>{{member.average_voted_with_party}}</td>
+                                </tr>
+                            </tbody>
                     </table>
                 </div>
             </div>  
@@ -115,9 +119,13 @@
                                 <th scope="col">% Party Votes</th>
                             </tr>
                         </thead>
-                        <tbody id="tbody4">
-
-                        </tbody>
+                        <tbody>
+                                <tr v-for="member in leastLoyal">
+                                    <td>{{member.first}}</td>
+                                    <td>{{member.second}}</td>
+                                    <td>{{member.third}}</td>
+                                </tr>
+                            </tbody>
                     </table>
                 </div>
                 <div class="col-md-6">
@@ -130,11 +138,16 @@
                                 <th scope="col">% Party Votes</th>
                             </tr>
                         </thead>
-                        <tbody id="tbody5">
-                            
-                        </tbody>
+                        <tbody>
+                                <tr v-for="member in mostLoyal">
+                                    <td>{{member.first}}</td>
+                                    <td>{{member.second}}</td>
+                                    <td>{{member.third}}</td>
+                                </tr>
+                            </tbody>
                     </table>
-                </div>     
+                </div>
+        </div>             
     </main>        
     <!-- Footer -->
   <footer class="page-footer font-small pt-4 ">
@@ -177,8 +190,8 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- <script src="pro-congress-113-house.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="general-statistics.js"></script>
-  <script src="house-statistics.js"></script>
 </body>
 
 </html>
