@@ -117,49 +117,50 @@
                         </tbody>
                     </table>
                 </div>
-                <hr width="100%">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>Least Engaged (Bottom 10% Attendance)</h5>
-                        <table class=" table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Number of Missed Votes</th>
-                                    <th scope="col">% Missed</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="member in leastEngaged">
-                                    <td>{{member.first}}</td>
-                                    <td>{{member.second}}</td>
-                                    <td>{{member.third}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
-                    <div class="col-md-6">
-                        <h5>Most Engaged (Top 10% Attendance)</h5>
-                        <table class=" table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Number of Missed Votes</th>
-                                    <th scope="col">% Missed</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="member in mostEngaged">
-                                    <td>{{member.first}}</td>
-                                    <td>{{member.second}}</td>
-                                    <td>{{member.third}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
+            </div>
+            <hr width="100%">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Least Engaged (Bottom 10% Attendance)</h5>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Number of Missed Votes</th>
+                                <th scope="col">% Missed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="member in leastEngaged">
+                                <td><a target="_blank" :href="member.url">{{member.first}}</a></td>
+                                <td>{{member.second}}</td>
+                                <td>{{member.third}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+                <div class="col-md-6">
+                    <h5>Most Engaged (Top 10% Attendance)</h5>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Number of Missed Votes</th>
+                                <th scope="col">% Missed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="member in mostEngaged">
+                                <td><a target="_blank" :href="member.url">{{member.first}}</a></td>
+                                <td>{{member.second}}</td>
+                                <td>{{member.third}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- Footer -->

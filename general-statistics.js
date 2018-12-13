@@ -47,30 +47,29 @@ new Vue({
             return this.getStatistics("votes_with_party_pct", "loyal", false)
         }
     },
-
-
     methods: {
         membersCountByParty: function (party) {
             return this.members.filter(member => member.party === party).length
         },
         membersAvgCountByParty: function (party) {
-            var arr = this.members
+            let arr = this.members
                 .filter(member => member.party === party)
                 .map(member => member.votes_with_party_pct)
-            var avg = arr.reduce((a, b) => a + b, 0) / arr.length
+            let avg = arr.reduce((a, b) => a + b, 0) / arr.length
             return (avg.toFixed(2));
         },
         getMembersBasedOnType: function (type, percentage) {
             return this.members.map(member => ({
                 first: member.first_name + ' ' + member.last_name,
                 second: parseInt(member.missed_votes * ((type === "loyal") ? member[percentage] / 100 : 1)),
-                third: member[percentage] + "%"
+                third: member[percentage] + "%",
+                url: member.url
             }));
         },
         getStatistics: function (percentage, type, decending) {
-            var arr = this.getMembersBasedOnType(type, percentage)
+            let arr = this.getMembersBasedOnType(type, percentage)
             arr.sort((lower, higher) => ((decending) ? higher.second - lower.second : lower.second - higher.second));
-            var lastValue = arr[Math.round(arr.length * 10 / 100) - 1]
+            let lastValue = arr[Math.round(arr.length * 10 / 100) - 1]
             arr = arr.filter(value => (decending) ? value.second >= lastValue.second : value.second <= lastValue.second)
             return arr
         }

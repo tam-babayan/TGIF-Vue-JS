@@ -101,25 +101,25 @@
                         but every state is entitled to at least one representative. </p>
                 </div>
             </div>
-
-            <div id="app" data-uri="113/senate/members.json">
+            <!-- Filters -->
+            <div id="app" data-uri="113/house/members.json">
                 <div class="container">
                     <div class="row ">
                         <div class="row col-8">
-                            <div class="col-3">
+                            <div class="col-sm-12 col-lg-3">
                                 <label class="general-label" for="general-label">Filter by Party:</label>
                             </div>
-                            <div class="col-2">
+                            <div class="col-sm-12 col-lg-3">
                                 <input type="checkbox" class="form-check-input filter" value="R" name="party" id="Republican"
                                     v-model="checked">
                                 <label class="form-check-label" for="Republican">Republican</label>
                             </div>
-                            <div class="col-2">
+                            <div class="col-sm-12 col-lg-3">
                                 <input type="checkbox" class="form-check-input filter" value="D" name="party" id="Democrat"
                                     v-model="checked">
                                 <label class="form-check-label" for="Democrat">Democrat</label>
                             </div>
-                            <div class="col-2">
+                            <div class="col-sm-12 col-lg-3">
                                 <input type="checkbox" class="form-check-input filter" value="I" name="party" id="Independent"
                                     v-model="checked">
                                 <label class="form-check-label" for="Independent">Independent</label>
@@ -135,7 +135,7 @@
                     </div>
                     <!-- Table -->
                     <table class=" table table-hover py-5" id="senate-data">
-                        <thead>
+                        <thead >
                             <tr>
                                 <th scope="col">Senator</th>
                                 <th scope="col">Party</th>
@@ -146,7 +146,8 @@
                         </thead>
                         <tbody>
                             <tr v-for="member in filteredSenators">
-                                <td>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</td>
+                                <td><a target="_blank" :href="member.url">{{member.first_name}}
+                                        {{member.middle_name}} {{member.last_name}}</a></td>
                                 <td>{{member.party}}</td>
                                 <td>{{member.state}}</td>
                                 <td>{{member.seniority}}</td>
