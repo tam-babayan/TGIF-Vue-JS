@@ -71,7 +71,7 @@ new Vue({
             var arr = this.getMembersBasedOnType(type, percentage)
             arr.sort((lower, higher) => ((decending) ? higher.second - lower.second : lower.second - higher.second));
             var lastValue = arr[Math.round(arr.length * 10 / 100) - 1]
-            arr = arr.filter(value => (decending) ? value.next >= lastValue.next : value.next <= lastValue.next)
+            arr = arr.filter(value => (decending) ? value.second >= lastValue.second : value.second <= lastValue.second)
             return arr
         }
     }

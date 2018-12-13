@@ -32,9 +32,4 @@ new Vue({
             return this.members.filter(item => item.state)
         }
     },
-    // methods: {
-    //     senatorsWebSiteLinks(member) {
-    //         console.log( this.members.filter(item => item.url == member.url))
-    //     }
-    // }
 });
