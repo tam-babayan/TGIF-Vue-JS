@@ -6,7 +6,7 @@ new Vue({
         select: "All"
     },
     mounted() {
-        let uri = this.$el.dataset.uri
+        const uri = this.$el.dataset.uri
         axios
             .create({
                 baseURL: 'https://api.propublica.org/congress/v1/',
