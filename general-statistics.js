@@ -55,7 +55,7 @@ new Vue({
             const arr = this.members
                 .filter(member => member.party === party)
                 .map(member => member.votes_with_party_pct)
-            const avg = arr.reduce((a, b) => a + b, 0) / arr.length
+            const avg = (arr.length) ? arr.reduce((a, b) => a + b, 0) / arr.length : 0
             return (avg.toFixed(2));
         },
         getMembersBasedOnType: function (type, percentage) {
@@ -67,11 +67,11 @@ new Vue({
             }));
         },
         getStatistics: function (percentage, type, decending) {
-            let arr = this.getMembersBasedOnType(type, percentage)
+            const arr = this.getMembersBasedOnType(type, percentage)
             arr.sort((lower, higher) => ((decending) ? higher.second - lower.second : lower.second - higher.second));
             const lastValue = arr[Math.round(arr.length * 10 / 100) - 1]
-            arr = arr.filter(value => (decending) ? value.second >= lastValue.second : value.second <= lastValue.second)
-            return arr
+            return arr.filter(value => (decending) ? value.second >= lastValue.second : value.second <= lastValue.second)
+        
         }
     }
 });

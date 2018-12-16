@@ -29,7 +29,16 @@ new Vue({
             })
         },
         statesList() {
-            return this.members.filter(item => item.state)
+            return this.members
+                .map(member => member.state)
+                .filter((item, index, array) => array.indexOf(item) === index)
+                .sort((a, b) => {
+                    if (a < b)
+                        return -1
+                    if (a > b)
+                        return 1
+                    return 0
+                })
         }
-    },
+    }
 });
